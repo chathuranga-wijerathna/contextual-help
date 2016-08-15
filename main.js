@@ -25,9 +25,8 @@ var startContextualHelp = function () {
 	container.setAttribute('role', 'menu');
 	container.classList.add('o-drawer-right', 'o-drawer-animated', 'o-contextual-help__drawer');
 	container.style.display = 'none';
-	var par = document.getElementsByTagName("body")[0];
-	var target = document.querySelector('header.o-app-header') || par.firstChild;
-	par.insertBefore(container, target? target.nextSibling : target);
+	var target = document.getElementById('helpDrawer');
+	target.appendChild(container);
 
 	// init help inside of drawer
 	var help = new ContextualHelp(container);
